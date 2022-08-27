@@ -1,18 +1,9 @@
 # Electronics-week-4-tasks
 
 **Task 1: Building an arduino circuit for Analog input (Photoresistor sensor)**  
-(https://www.tinkercad.com/things/e5iy0LLD7KT)
+(https://www.tinkercad.com/things/f8GjqwAGnAG)
 
-**1. Make an account in TinkerCAD for Arduino simulations: https://www.tinkercad.com/**
-
-  1) Click Sign Up on the Tinkercad homepage.
-  2) Choose your country from the drop-down list.
-  3) Enter your birthday. 
-  4) Click the Next button.
-  5) Add your email address and a password, accept the Tinkercad terms of service, and click Create Account.
-  
-  
-**2. Building the Servo Motor:**
+**Building the Arduino circuit with analog input:**
 
   1) Click on create new Circuit.
   2) From the search tool, get:
@@ -84,3 +75,63 @@ void loop() {
 5) Click on start Simulation if you change the light indicator on the Photoresistor, the osoloscope will show a signal for the analog input.
 
 ![image](https://user-images.githubusercontent.com/108147030/187031789-8e748319-642b-4725-ac2d-16f347b169aa.png)
+
+**Task 2: Building an arduino circuit for Digital input (Push button)**  
+(https://www.tinkercad.com/things/lNZnM33t4k2)
+
+**Building the Arduino circuit with digital input**
+
+  1) Click on create new Circuit.
+  2) From the search tool, get:
+  
+    i. Breadboard 
+    
+    ii. Arduino uno r3
+    
+    iii. resistor 1k ohm
+    
+    iv. resistors 10k ohm
+    
+    v. push button
+    
+    vi. LED
+  
+  3) Connect the circuit as shown below:
+  
+![Copy of Blink and Read Digital Signal](https://user-images.githubusercontent.com/108147030/187032266-8a66dfff-ce11-43f5-9226-4c803072b222.png)
+ 
+
+  4) use the following code to simulate the Analog input arduino circuit:
+ 
+```ruby
+// C++ code
+//
+/*
+  This program blinks pin 13 of the Arduino (the
+  built-in LED)
+*/
+
+int buttonPin = 12;
+int ledPin = 13;
+int val = 0;
+
+void setup()
+{
+  pinMode(ledPin, OUTPUT);
+  pinMode(buttonPin, INPUT);
+}
+
+void loop()
+{
+  val = digitalRead(buttonPin);
+  
+  if(val == 1) // daca butonul este apasat
+  	digitalWrite(ledPin, HIGH); // alimentam in continuare LED-u;
+  else // altfel, daca butonul nu este apasat
+  	digitalWrite(ledPin, LOW); // oprim alimentarea LED-ului
+}
+  ```
+  
+5) Click on start Simulation if you change the light indicator on the Photoresistor, the osoloscope will show a signal for the analog input.
+
+![output](https://user-images.githubusercontent.com/108147030/187032354-dc2f3ca7-77a1-46e7-91e6-31a38a4b7870.png)
